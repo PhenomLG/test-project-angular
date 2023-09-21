@@ -1,0 +1,26 @@
+.main {
+  margin-top: 30px;
+
+  &__title {
+    color: #264D73;
+    font-size: 2.5rem;
+  }
+
+  &__controls {
+    padding-left: 10px;
+  }
+
+  &__control {
+    margin-right: 20px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4%;
+    font-size: 1.2rem;
+
+    &:hover {
+      background-color: #3f525c;
+      color: white;
+    }
+  }
+}

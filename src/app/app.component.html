@@ -1,0 +1,22 @@
+<main class="main">
+  <div class="container">
+    <h1 class="main__title">Tour of Heroes</h1>
+    <div class="main__controls">
+      <button class="main__control">Dashboard</button>
+      <button class="main__control">Heroes</button>
+    </div>
+    <div class="main__table-title">My Heroes</div>
+    <table class="main__table">
+      <tbody>
+        <tr *ngFor="let item of heroes">
+          <td>{{item.id}}</td>
+          <td>
+            {{item.name}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>
+
+
