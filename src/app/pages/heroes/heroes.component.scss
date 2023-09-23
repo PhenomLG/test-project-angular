@@ -1,0 +1,44 @@
+.heroes {
+  &__title {
+  }
+
+  &__list {
+    margin-top: 20px;
+    display: grid;
+    row-gap: 5px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    transition: all 0.6s;
+    cursor: pointer;
+
+    &:hover {
+      filter: contrast(80%);
+    }
+
+    &-id {
+      display: flex;
+      padding: 10px;
+      justify-content: center;
+      align-items: center;
+      background-color: #3f525c;
+      color: white;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    &-name {
+      min-width: 200px;
+      padding-left: 20px;
+      display: flex;
+      align-items: center;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+      background-color: lightgray;
+    }
+  }
+}
