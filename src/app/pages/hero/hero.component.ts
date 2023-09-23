@@ -14,7 +14,6 @@ export class HeroComponent implements OnInit{
   @Input() hero!: Hero;
   id!: number;
 
-
   constructor(private activatedRoute: ActivatedRoute,
               private heroService: HeroService,
               private location: Location) {
@@ -30,6 +29,4 @@ export class HeroComponent implements OnInit{
   goToPreviousPage() {
     this.location.back();
   }
-
-  protected readonly Hero = Hero;
 }
