@@ -12,6 +12,7 @@ import {HeroService} from "./services/hero.service";
 import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { HomeComponent } from './pages/home/home.component';
 import {FormsModule} from "@angular/forms";
+import {provideAnimations} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import {FormsModule} from "@angular/forms";
     AppRoutingModule,
     FormsModule,
   ],
-  providers: [HeroService],
+  providers: [HeroService, provideAnimations()],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

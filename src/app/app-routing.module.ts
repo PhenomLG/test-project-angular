@@ -6,11 +6,12 @@ import {NotfoundComponent} from "./pages/notfound/notfound.component";
 import {HomeComponent} from "./pages/home/home.component";
 import {HeroComponent} from "./hero/hero.component";
 
+
+
+
 const routes: Routes = [
-  // http://domen.ru/dashboard/10
-  //               //dashboard/:id
   { path: '', component: HomeComponent },
-  { path: 'dashboard', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent},
   { path: 'heroes', component: HeroesComponent },
   { path: 'heroes/:id', component: HeroComponent },
   { path: '**', component: NotfoundComponent },

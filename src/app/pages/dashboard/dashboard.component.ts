@@ -11,11 +11,8 @@ export class DashboardComponent implements OnInit{
   topHeroes: Hero[] = [];
   title: string = 'Top Heroes';
   constructor(private heroService: HeroService) {
-    //this.topHeroes = this.heroService.getHeroes();
   }
   ngOnInit(): void {
     this.topHeroes = this.heroService.getHeroes().slice(0, 4);
   }
-
-
 }
