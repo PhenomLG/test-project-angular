@@ -3,12 +3,14 @@
   &__wrapper {
     margin-top: 20px;
     display: flex;
+    align-items: flex-start;
   }
   &__item {
     margin: 0 5px 0 5px;
     padding: 10px;
-    max-width: 500px;
-      overflow: auto;
+    min-width: 100px;
+    max-width: 200px;
+    overflow-wrap: anywhere;
 
     display: flex;
     justify-content: center;

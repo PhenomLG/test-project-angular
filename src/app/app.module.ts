@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import {FormsModule} from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './pages/heroes/heroes.component';
-import { HeroComponent } from './hero/hero.component';
+import { HeroComponent } from './pages/hero/hero.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { HomeComponent } from './pages/home/home.component';
+import { Error404Component } from './pages/error404/error404.component';
 
 import {HeroService} from "./services/hero.service";
-import { NotfoundComponent } from './pages/notfound/notfound.component';
-import { HomeComponent } from './pages/home/home.component';
-import {FormsModule} from "@angular/forms";
+
 import {provideAnimations} from "@angular/platform-browser/animations";
+
 
 @NgModule({
   declarations: [
@@ -20,8 +21,8 @@ import {provideAnimations} from "@angular/platform-browser/animations";
     HeroesComponent,
     HeroComponent,
     DashboardComponent,
-    NotfoundComponent,
     HomeComponent,
+    Error404Component,
   ],
   imports: [
     BrowserModule,

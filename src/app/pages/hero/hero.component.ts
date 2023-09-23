@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Hero} from "../models/hero.models";
-import {ActivatedRoute, Router} from "@angular/router";
-import {HeroService} from "../services/hero.service";
-import {Subscription} from "rxjs";
+import {Location} from "@angular/common";
+import {Hero} from "../../models/hero.models";
+import {ActivatedRoute} from "@angular/router";
+import {HeroService} from "../../services/hero.service";
 
 @Component({
   selector: 'app-hero',
@@ -13,13 +13,12 @@ import {Subscription} from "rxjs";
 export class HeroComponent implements OnInit{
   @Input() hero!: Hero;
   id!: number;
-
-  private subsc: Subscription;
+  @Input() previousUrl: string = '';
 
   constructor(private activatedRoute: ActivatedRoute,
               private heroService: HeroService,
-              private router: Router) {
-     this.subsc = activatedRoute.params.subscribe(params => this.id = params['id']);
+              private location: Location) {
+     activatedRoute.params.subscribe(params => this.id = params['id']);
   }
 
   ngOnInit(): void {
@@ -29,7 +28,6 @@ export class HeroComponent implements OnInit{
   }
 
   goToPreviousPage() {
-    this.router.navigate(['/heroes'], {
-    });
+    this.location.back();
   }
 }
