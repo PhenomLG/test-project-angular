@@ -1,5 +1,7 @@
 <section class="dashboard">
-  <h2 class="dashboard__title"></h2>
-
+  <h2 class="dashboard__title">{{title}}</h2>
+  <div class="dashboard__wrapper">
+    <div *ngFor="let hero of topHeroes" class="dashboard__item">{{hero.name}}</div>
+  </div>
 </section>
 
