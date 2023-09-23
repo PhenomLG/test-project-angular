@@ -1,4 +1,5 @@
 <div class="hero">
   <div class="hero__item">{{hero.id}}</div>
   <div class="hero__item">{{hero.name}}</div>
+  <a [routerLink]="['/heroes', hero.id]">Click</a>
 </div>

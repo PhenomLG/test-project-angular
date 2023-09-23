@@ -1,7 +1,5 @@
-import {Injectable} from '@angular/core';
 import {Hero} from "../models/hero.models";
 
-@Injectable()
 export class HeroService {
   constructor() { }
   heroes: Hero[] = [
@@ -15,12 +13,8 @@ export class HeroService {
     return this.heroes;
   }
 
-  getHero(num: number): Hero {
-     return this.heroes[num];
-  }
-
-  createHero() {
-
+  getHero(id: number): Hero {
+     return this.heroes[this.heroes.findIndex(hero => hero.id = id)];
   }
 
   updateHero() {
