@@ -1,7 +1,7 @@
 
 <div class="container">
     <header class="header">
-      <h1 class="header__title" routerLink="/">Tour of Heroes</h1>
+      <h1 class="header__title" routerLink="/">{{title}}</h1>
       <nav class="header__controls">
         <a class="header__control" routerLink="dashboard">Dashboard</a>
         <a class="header__control" routerLink="heroes">Heroes</a>
@@ -10,7 +10,6 @@
     <main [@pageAnimation]="getRouterOutletState(o)">
       <router-outlet #o='outlet'></router-outlet>
     </main>
-
 </div>
 
 
