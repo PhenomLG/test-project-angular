@@ -17,12 +17,4 @@ export class HeroService {
   getHero(id: number): Hero {
      return this.heroes[this.heroes.findIndex(hero => hero.id == id)];
   }
-
-  updateHero() {
-
-  }
-
-  destroyHero() {
-
-  }
 }
