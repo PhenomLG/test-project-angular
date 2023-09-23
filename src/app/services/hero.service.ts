@@ -2,11 +2,18 @@ import {Hero} from "../models/hero.models";
 
 export class HeroService {
   private heroes: Hero[] = [
+    new Hero('Poldi', 16),
     new Hero('Dr.Nice', 12),
     new Hero('Bombasto', 13),
     new Hero('Celeritas', 14),
     new Hero('Magneta', 15),
     new Hero('Poldi', 16),
+        new Hero('Dr.Nice', 12),
+    new Hero('Bombasto', 13),
+    new Hero('Celeritas', 14),
+    new Hero('Magneta', 15),
+    new Hero('Poldi', 16),
+
   ];
 
   constructor() { }

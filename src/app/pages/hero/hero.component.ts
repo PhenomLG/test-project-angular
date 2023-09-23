@@ -13,7 +13,7 @@ import {HeroService} from "../../services/hero.service";
 export class HeroComponent implements OnInit{
   @Input() hero!: Hero;
   id!: number;
-  @Input() previousUrl: string = '';
+
 
   constructor(private activatedRoute: ActivatedRoute,
               private heroService: HeroService,
@@ -30,4 +30,6 @@ export class HeroComponent implements OnInit{
   goToPreviousPage() {
     this.location.back();
   }
+
+  protected readonly Hero = Hero;
 }
