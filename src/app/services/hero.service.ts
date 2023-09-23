@@ -6,10 +6,10 @@ export class HeroService {
     new Hero('Bombasto', 13),
     new Hero('Celeritas', 14),
     new Hero('Magneta', 15),
-    new Hero('Dynama', 16),
-    new Hero('Dr.IQ', 16),
-    new Hero('Magma', 16),
-    new Hero('Tornado', 16),
+    new Hero('Dynama', 17),
+    new Hero('Dr.IQ', 18),
+    new Hero('Magma', 19),
+    new Hero('Tornado', 20),
   ];
 
   constructor() { }
