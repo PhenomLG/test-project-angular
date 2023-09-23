@@ -1,4 +1,5 @@
-<section class="hero">
+<ng-template #err><app-notfound></app-notfound></ng-template>
+<section *ngIf="hero; else err" class="hero">
   <h2 class="hero__title"><span>{{hero.name}}</span> Details</h2>
   <div class="hero__wrapper">
     <div class="hero__id">id: {{hero.id}}</div>
@@ -6,3 +7,4 @@
     <input class="hero__input" type="text" id="name" [(ngModel)]="hero.name">
   </div>
 </section>
+
