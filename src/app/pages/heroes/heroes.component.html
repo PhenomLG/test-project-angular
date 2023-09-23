@@ -1,7 +1,7 @@
 <section class="heroes">
   <h2 class="heroes__title">{{title}}</h2>
   <div class="heroes__list">
-    <div *ngFor="let hero of heroes" class="heroes__item">
+    <div *ngFor="let hero of heroes" class="heroes__item" [routerLink]="['/heroes', hero.id]">
       <div class="heroes__item-id">{{hero.id}}</div>
       <div class="heroes__item-name">{{hero.name}}</div>
     </div>

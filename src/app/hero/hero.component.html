@@ -1,5 +1,8 @@
-<div class="hero">
-  <div class="hero__item">{{hero.id}}</div>
-  <div class="hero__item">{{hero.name}}</div>
-  <a [routerLink]="['/heroes', hero.id]">Click</a>
-</div>
+<section class="hero">
+  <h2 class="hero__title"><span>{{hero.name}}</span> Details</h2>
+  <div class="hero__wrapper">
+    <div class="hero__id">id: {{hero.id}}</div>
+    <label class="hero__label" for="name">Hero name:&nbsp;</label>
+    <input class="hero__input" type="text" id="name" [(ngModel)]="hero.name">
+  </div>
+</section>

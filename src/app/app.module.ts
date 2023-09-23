@@ -9,9 +9,9 @@ import { HeroComponent } from './hero/hero.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 import {HeroService} from "./services/hero.service";
-import { DetailComponent } from './pages/detail/detail.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { HomeComponent } from './pages/home/home.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -19,13 +19,13 @@ import { HomeComponent } from './pages/home/home.component';
     HeroesComponent,
     HeroComponent,
     DashboardComponent,
-    DetailComponent,
     NotfoundComponent,
     HomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
   ],
   providers: [HeroService],
   bootstrap: [AppComponent]

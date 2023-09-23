@@ -1,7 +1,23 @@
 .hero {
-  display: flex;
-
   &__item {
     margin-right: 30px;
+  }
+
+  &__title span {
+    text-transform: uppercase;
+  }
+
+  &__wrapper {
+    margin-top: 20px;
+  }
+
+  &__label {
+    color: #264D73;
+    font-weight: 700;
+  }
+
+  &__input {
+    padding: 10px;
+    font-size: 1rem;
   }
 }
