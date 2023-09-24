@@ -1,4 +1,4 @@
-<ng-template #err><app-error404></app-error404></ng-template>
+<ng-template #err><app-error404 [errorMessage]="'The hero is not found'"></app-error404></ng-template>
 
 <section *ngIf="hero; else err" class="hero">
   <h2 class="hero__title">{{hero.name | uppercase}} Details</h2>
