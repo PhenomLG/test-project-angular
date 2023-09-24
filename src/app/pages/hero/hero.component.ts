@@ -1,9 +1,8 @@
-import {Component, EventEmitter, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Location} from "@angular/common";
 import {Hero} from "../../models/hero.models";
 import {ActivatedRoute} from "@angular/router";
 import {HeroService} from "../../services/hero.service";
-import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-hero',
@@ -12,11 +11,9 @@ import {NgForm} from "@angular/forms";
 })
 
 export class HeroComponent implements OnInit{
-  @Input() hero!: Hero;
+  hero!: Hero;
   id!: number;
-  maxNameLength: number = 16;
-
-  emptyName: string = "";
+  maxNameLength: number = 18;
 
   constructor(private activatedRoute: ActivatedRoute,
               private heroService: HeroService,
