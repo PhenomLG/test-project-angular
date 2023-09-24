@@ -1,4 +1,6 @@
-<section class="heroes">
+<ng-template #err><app-error404 [errorMessage]="'Ops, something went wrong when loading of heroes'"></app-error404></ng-template>
+
+<section *ngIf="heroes.length > 0; else err" class="heroes">
   <div class="heroes__list">
     <h2 class="heroes__title">{{title | titlecase}}</h2>
     <div *ngFor="let hero of heroes | filterName : searchName" class="heroes__item" [routerLink]="['/heroes', hero.id]">

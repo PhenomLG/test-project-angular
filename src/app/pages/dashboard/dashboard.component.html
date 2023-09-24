@@ -1,4 +1,6 @@
-<section class="dashboard">
+<ng-template #err><app-error404 [errorMessage]="'Ops, something went wrong when loading of heroes'"></app-error404></ng-template>
+
+<section *ngIf="topHeroes.length > 0; else err" class="dashboard">
   <h2 class="dashboard__title">{{title}}</h2>
   <div class="dashboard__wrapper">
     <div *ngFor="let hero of topHeroes" class="dashboard__item" [routerLink]="['/heroes', hero.id]">
