@@ -32,4 +32,8 @@ export class HeroComponent implements OnInit{
   goToPreviousPage(): void {
     this.location.back();
   }
+
+  onNameChange() {
+    console.log(this.heroService.editHero(this.hero).subscribe());
+  }
 }

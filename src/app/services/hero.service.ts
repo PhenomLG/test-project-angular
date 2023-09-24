@@ -18,4 +18,9 @@ export class HeroService {
     return this.http.get<Hero>(`${this.apiUrl}/heroes?id=${id}`).pipe(catchError(error => {
       return throwError(() => error)}));
   }
+
+  editHero(hero: Hero) : Observable<Hero> {
+    return this.http.post<Hero>(`${this.apiUrl}/heroes`, hero);
+  }
 }
+
