@@ -20,7 +20,8 @@ export class HeroService {
   }
 
   editHero(hero: Hero) : Observable<Hero> {
-    return this.http.post<Hero>(`${this.apiUrl}/heroes`, hero);
+    return this.http.post<Hero>(`${this.apiUrl}/heroes`, hero).pipe(catchError(error => {
+      return throwError(() => error)}));
   }
 }
 

@@ -14,6 +14,8 @@ export class HeroComponent implements OnInit{
   hero!: Hero;
   id!: number;
   maxNameLength: number = 18;
+  isLoading: boolean = true;
+  isError: boolean = false;
 
   constructor(private activatedRoute: ActivatedRoute,
               private heroService: HeroService,
@@ -24,8 +26,14 @@ export class HeroComponent implements OnInit{
 
   ngOnInit(): void {
     this.heroService.getHero(this.id).subscribe((hero: Hero) => {
-      if(typeof hero.id !== 'undefined')
+      if(typeof hero.id !== 'undefined') {
+        this.isLoading = false;
         this.hero = hero;
+      }
+      else {
+        this.isLoading = false;
+        this.isError = true;
+      }
     });
   }
 
@@ -34,6 +42,7 @@ export class HeroComponent implements OnInit{
   }
 
   onNameChange() {
-    console.log(this.heroService.editHero(this.hero).subscribe());
+    this.heroService.editHero(this.hero).subscribe();
+
   }
 }

@@ -1,6 +1,7 @@
 <ng-template #err><app-error404 [errorMessage]="'The hero is not found'"></app-error404></ng-template>
 
-<section *ngIf="hero; else err" class="hero">
+<div *ngIf="isLoading && !isError">The hero is loading</div>
+<section *ngIf="!isError; else err" class="hero">
   <h2 class="hero__title">{{hero.name | uppercase}} Details</h2>
   <div class="hero__wrapper">
     <div class="hero__id">id: {{hero.id}}</div>
