@@ -6,7 +6,6 @@
     align-items: flex-start;
   }
   &__item {
-    margin: 0 5px 0 5px;
     padding: 10px;
     min-width: 100px;
 
@@ -21,6 +20,10 @@
     cursor: pointer;
     &:hover {
       background-color: black;
+    }
+
+    &:not(:first-child) {
+      margin: 0 5px 0 5px;
     }
   }
 }

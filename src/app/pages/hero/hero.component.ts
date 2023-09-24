@@ -3,17 +3,20 @@ import {Location} from "@angular/common";
 import {Hero} from "../../models/hero.models";
 import {ActivatedRoute} from "@angular/router";
 import {HeroService} from "../../services/hero.service";
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-hero',
   templateUrl: './hero.component.html',
-  styleUrls: ['./hero.component.scss'],
+  styleUrls: ['./hero.component.scss']
 })
 
 export class HeroComponent implements OnInit{
   @Input() hero!: Hero;
   id!: number;
   maxNameLength: number = 16;
+
+  emptyName: string = "";
 
   constructor(private activatedRoute: ActivatedRoute,
               private heroService: HeroService,

@@ -2,10 +2,8 @@
   display: flex;
   justify-content: flex-start;
 
-
   &__list {
     min-width: 280px;
-    margin-top: 20px;
     display: grid;
     row-gap: 5px;
   }
