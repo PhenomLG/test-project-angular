@@ -1,6 +1,7 @@
 .heroes {
-  &__title {
-  }
+  display: flex;
+  justify-content: flex-start;
+
 
   &__list {
     margin-top: 20px;

@@ -11,8 +11,9 @@ import { HomeComponent } from './pages/home/home.component';
 import { Error404Component } from './pages/error404/error404.component';
 
 import {HeroService} from "./services/hero.service";
-
 import {provideAnimations} from "@angular/platform-browser/animations";
+import { HeroSearchComponent } from './pages/herosearch/hero-search.component';
+import { FilterNamePipe } from './pipes/filter-name.pipe';
 
 
 @NgModule({
@@ -23,6 +24,8 @@ import {provideAnimations} from "@angular/platform-browser/animations";
     DashboardComponent,
     HomeComponent,
     Error404Component,
+    HeroSearchComponent,
+    FilterNamePipe,
   ],
   imports: [
     BrowserModule,

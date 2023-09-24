@@ -10,11 +10,16 @@ import {HeroService} from "../../services/hero.service";
 export class HeroesComponent implements OnInit{
   title: string = "My Heroes";
   heroes: Hero[] = [];
+  searchName: string = "";
 
   constructor(private heroService: HeroService) {
   }
 
   ngOnInit() {
     this.heroes = this.heroService.getHeroes();
+  }
+
+  onSearchName($event: string)   {
+    this.searchName = $event;
   }
 }
