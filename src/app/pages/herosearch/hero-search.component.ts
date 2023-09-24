@@ -11,7 +11,7 @@ export class HeroSearchComponent {
   title: string = "search hero";
   searchName: string = "";
 
-  onInputName() {
+  onInputName(): void {
     this.onSearchName.emit(this.searchName);
   }
 }

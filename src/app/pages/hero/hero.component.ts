@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit} from '@angular/core';
 import {Location} from "@angular/common";
 import {Hero} from "../../models/hero.models";
 import {ActivatedRoute} from "@angular/router";
@@ -13,6 +13,7 @@ import {HeroService} from "../../services/hero.service";
 export class HeroComponent implements OnInit{
   @Input() hero!: Hero;
   id!: number;
+  maxNameLength: number = 16;
 
   constructor(private activatedRoute: ActivatedRoute,
               private heroService: HeroService,
@@ -26,7 +27,7 @@ export class HeroComponent implements OnInit{
     }
   }
 
-  goToPreviousPage() {
+  goToPreviousPage(): void {
     this.location.back();
   }
 }
