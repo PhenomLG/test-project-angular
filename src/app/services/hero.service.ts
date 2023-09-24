@@ -5,7 +5,7 @@ import {Observable} from "rxjs";
 
 @Injectable()
 export class HeroService {
-  private apiUrl: string = 'http://heroapi.com';
+  private apiUrl: string = 'http://heroapi.com/api';
 
   constructor(private http: HttpClient) {
   }
