@@ -14,6 +14,7 @@ import {HeroService} from "./services/hero.service";
 import {provideAnimations} from "@angular/platform-browser/animations";
 import { HeroSearchComponent } from './pages/herosearch/hero-search.component';
 import { FilterNamePipe } from './pipes/filter-name.pipe';
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { FilterNamePipe } from './pipes/filter-name.pipe';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [HeroService, provideAnimations()],
   bootstrap: [AppComponent]
