@@ -5,7 +5,7 @@
   <div class="hero__wrapper">
     <div class="hero__id">id: {{hero.id}}</div>
     <label class="hero__label" for="name">Hero name:&nbsp;</label>
-    <input class="hero__input" type="text" id="name" #heroName="ngModel" [maxlength]="maxNameLength" [(ngModel)]="hero.name">
+    <input class="hero__input" type="text" id="name" [maxlength]="maxNameLength" [(ngModel)]="hero.name">
   </div>
   <button (click)="goToPreviousPage()" class="hero__back">Back</button>
 </section>
