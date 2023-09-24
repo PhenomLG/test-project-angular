@@ -5,10 +5,9 @@ import {Hero} from "../models/hero.models";
   name: 'filterName'
 })
 export class FilterNamePipe implements PipeTransform {
-
   transform(heroes: Hero[], searchName: string): Hero[] {
     if(searchName != "") {
-      return heroes.filter(hero => hero.name.includes(searchName));
+      return heroes.filter(hero => hero.name.toLowerCase().includes(searchName.toLowerCase()));
     }
     return heroes;
   }
