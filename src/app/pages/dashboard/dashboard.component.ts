@@ -10,8 +10,10 @@ import {Hero} from "../../models/hero.models";
 export class DashboardComponent implements OnInit{
   topHeroes: Hero[] = [];
   title: string = 'Top Heroes';
+
   constructor(private heroService: HeroService) {
   }
+
   ngOnInit(): void {
     this.topHeroes = this.heroService.getHeroes().slice(0, 4);
   }

@@ -2,12 +2,11 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-error404',
-  template: '' +
-    '<section class="error">\n' +
-    '  <h2>The page is not found</h2>\n' +
-    '  <img src="../../../assets/error.gif" alt="Error" height="280" width="280">\n' +
-    '</section>'
+  template: `
+    <section class="error">
+      <h2>The page is not found</h2>
+      <img src="../../../assets/error.gif" alt="Error" height="280" width="280">
+    </section>'
+  `
 })
-export class Error404Component {
-
-}
+export class Error404Component { }
