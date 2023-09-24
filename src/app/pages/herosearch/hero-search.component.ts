@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 
 @Component({
-  selector: 'app-herosearch',
+  selector: 'app-heroSearch',
   templateUrl: './hero-search.component.html',
   styleUrls: ['./hero-search.component.scss']
 })
