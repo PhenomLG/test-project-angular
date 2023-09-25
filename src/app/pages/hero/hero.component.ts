@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Location} from "@angular/common";
 import {Hero} from "../../models/hero.models";
 import {ActivatedRoute} from "@angular/router";
@@ -43,6 +43,5 @@ export class HeroComponent implements OnInit{
 
   onNameChange() {
     this.heroService.editHero(this.hero).subscribe();
-
   }
 }
