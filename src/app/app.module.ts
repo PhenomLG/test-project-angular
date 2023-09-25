@@ -16,6 +16,7 @@ import { HeroSearchComponent } from './pages/herosearch/hero-search.component';
 import { FilterNamePipe } from './pipes/filter-name.pipe';
 import {HttpClientModule} from "@angular/common/http";
 import { SpinnerComponent } from './pages/spinner/spinner.component';
+import { LoadingComponent } from './pages/loading/loading.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { SpinnerComponent } from './pages/spinner/spinner.component';
     HeroSearchComponent,
     FilterNamePipe,
     SpinnerComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,

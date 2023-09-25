@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Hero} from "../../models/hero.models";
 import {HeroService} from "../../services/hero.service";
+import {LoadingService} from "../../services/loading.service";
 
 @Component({
   selector: 'app-heroes',
@@ -12,22 +13,14 @@ export class HeroesComponent implements OnInit{
   heroes: Hero[] = [];
   searchName: string = "";
 
-  isLoading: boolean = true;
-  isError: boolean = false;
-
-  constructor(private heroService: HeroService) {
+  constructor(private heroService: HeroService,
+              private loadingService: LoadingService) {
   }
 
   ngOnInit() {
+    this.loadingService.showSpinner();
      this.heroService.getHeroes().subscribe((heroes: Hero[]) => {
-       if(heroes.length > 0) {
-         this.heroes = heroes;
-         this.isLoading = false;
-       }
-       else {
-         this.isLoading = false;
-         this.isError = true;
-       }
+        this.heroes = this.loadingService.manageLoading(heroes);
      });
   }
 

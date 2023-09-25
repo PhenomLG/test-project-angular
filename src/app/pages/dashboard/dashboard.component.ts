@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HeroService} from "../../services/hero.service";
 import {Hero} from "../../models/hero.models";
+import {LoadingService} from "../../services/loading.service";
 
 @Component({
   selector: 'app-dashboard',
@@ -8,25 +9,19 @@ import {Hero} from "../../models/hero.models";
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit{
-  topHeroes: Hero[] = [];
+  topHeroes: Hero[] | null = [];
   title: string = 'Top Heroes';
 
-  isLoading: boolean = true;
-  isError: boolean = false;
-
-  constructor(private heroService: HeroService) {
+  constructor(private heroService: HeroService,
+              private loadingService: LoadingService) {
   }
 
-  ngOnInit(): void {this.heroService.getHeroes()
+  ngOnInit(): void {
+    this.loadingService.showSpinner();
+    this.heroService.getHeroes()
       .subscribe((heroes: Hero[]) => {
-        if(heroes.length > 0) {
-          this.isLoading = false;
-          this.topHeroes = heroes.slice(0, 4)
-        }
-        else {
-          this.isLoading = false;
-          this.isError = true;
-        }
+        const result = this.loadingService.manageLoading(heroes);
+        this.topHeroes = result ? result.slice(0, 4) : null;
       });
   }
 }

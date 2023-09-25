@@ -1,9 +1,4 @@
-
-
-<spinner *ngIf="isLoading"></spinner>
-<app-error404 *ngIf="isError"></app-error404>
-
-<section *ngIf="heroes.length > 0" class="heroes">
+<section *ngIf="heroes && heroes.length > 0" class="heroes">
   <div class="heroes__list">
     <h2 class="heroes__title">{{title | titlecase}}</h2>
     <div *ngFor="let hero of heroes | filterName : searchName" class="heroes__item" [routerLink]="['/heroes', hero.id]">

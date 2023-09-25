@@ -3,6 +3,7 @@ import {Location} from "@angular/common";
 import {Hero} from "../../models/hero.models";
 import {ActivatedRoute} from "@angular/router";
 import {HeroService} from "../../services/hero.service";
+import {LoadingService} from "../../services/loading.service";
 
 @Component({
   selector: 'app-hero',
@@ -14,26 +15,19 @@ export class HeroComponent implements OnInit{
   hero!: Hero;
   id!: number;
   maxNameLength: number = 18;
-  isLoading: boolean = true;
-  isError: boolean = false;
 
   constructor(private activatedRoute: ActivatedRoute,
               private heroService: HeroService,
-              private location: Location)
+              private location: Location,
+              private loadingService: LoadingService)
   {
      activatedRoute.params.subscribe(params => this.id = params['id']);
   }
 
   ngOnInit(): void {
+    this.loadingService.showSpinner();
     this.heroService.getHero(this.id).subscribe((hero: Hero) => {
-      if(typeof hero.id !== 'undefined') {
-        this.isLoading = false;
-        this.hero = hero;
-      }
-      else {
-        this.isLoading = false;
-        this.isError = true;
-      }
+      this.hero = this.loadingService.manageLoading(hero);
     });
   }
 

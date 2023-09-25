@@ -1,7 +1,4 @@
-<spinner  *ngIf="isLoading"></spinner>
-<app-error404 *ngIf="isError"></app-error404>
-
-<section *ngIf="topHeroes.length > 0" class="dashboard">
+<section *ngIf="topHeroes && topHeroes.length > 0" class="dashboard">
   <h2 class="dashboard__title">{{title}}</h2>
   <div class="dashboard__wrapper">
     <div *ngFor="let hero of topHeroes" class="dashboard__item" [routerLink]="['/heroes', hero.id]">
