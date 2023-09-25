@@ -25,7 +25,7 @@ export class HeroComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.heroService.getHero(this.id).subscribe((hero: Hero) => {
+    const result = this.heroService.getHero(this.id).subscribe((hero: Hero) => {
       if(typeof hero.id !== 'undefined') {
         this.isLoading = false;
         this.hero = hero;
@@ -35,6 +35,7 @@ export class HeroComponent implements OnInit{
         this.isError = true;
       }
     });
+    console.log(result);
   }
 
   goToPreviousPage(): void {
