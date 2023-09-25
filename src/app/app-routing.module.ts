@@ -6,9 +6,6 @@ import {HomeComponent} from "./pages/home/home.component";
 import {HeroComponent} from "./pages/hero/hero.component";
 import {Error404Component} from "./pages/error404/error404.component";
 
-
-
-
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'dashboard', component: DashboardComponent},
