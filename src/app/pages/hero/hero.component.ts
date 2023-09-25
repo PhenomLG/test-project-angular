@@ -35,7 +35,6 @@ export class HeroComponent implements OnInit{
         this.isError = true;
       }
     });
-    console.log(result);
   }
 
   goToPreviousPage(): void {

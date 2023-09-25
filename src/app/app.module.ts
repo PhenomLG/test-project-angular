@@ -15,6 +15,7 @@ import {provideAnimations} from "@angular/platform-browser/animations";
 import { HeroSearchComponent } from './pages/herosearch/hero-search.component';
 import { FilterNamePipe } from './pipes/filter-name.pipe';
 import {HttpClientModule} from "@angular/common/http";
+import { SpinnerComponent } from './pages/spinner/spinner.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import {HttpClientModule} from "@angular/common/http";
     Error404Component,
     HeroSearchComponent,
     FilterNamePipe,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,

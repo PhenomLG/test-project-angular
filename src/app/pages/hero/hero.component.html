@@ -1,5 +1,5 @@
-<div *ngIf="isLoading && !isError">The hero is loading</div>
-<app-error404 *ngIf="isError && !isLoading" [errorMessage]="'The hero is not found'"></app-error404>
+
+<spinner *ngIf="isLoading"></spinner>
 
 <section *ngIf="hero" class="hero">
   <h2 class="hero__title">{{hero.name | uppercase}} Details</h2>
@@ -10,3 +10,6 @@
   </div>
   <button (click)="goToPreviousPage()" class="hero__back">Back</button>
 </section>
+
+<app-error404 *ngIf="isError" [errorMessage]="'The hero is not found'"></app-error404>
+
