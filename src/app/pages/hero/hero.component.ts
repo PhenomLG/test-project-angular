@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Location} from "@angular/common";
 import {Hero} from "../../models/hero.models";
 import {ActivatedRoute} from "@angular/router";
@@ -25,7 +25,7 @@ export class HeroComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    const result = this.heroService.getHero(this.id).subscribe((hero: Hero) => {
+    this.heroService.getHero(this.id).subscribe((hero: Hero) => {
       if(typeof hero.id !== 'undefined') {
         this.isLoading = false;
         this.hero = hero;

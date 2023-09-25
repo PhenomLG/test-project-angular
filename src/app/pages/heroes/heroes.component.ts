@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Hero} from "../../models/hero.models";
 import {HeroService} from "../../services/hero.service";
 
@@ -12,11 +12,23 @@ export class HeroesComponent implements OnInit{
   heroes: Hero[] = [];
   searchName: string = "";
 
+  isLoading: boolean = true;
+  isError: boolean = false;
+
   constructor(private heroService: HeroService) {
   }
 
   ngOnInit() {
-     this.heroService.getHeroes().subscribe((heroes: Hero[]) => this.heroes = heroes);
+     this.heroService.getHeroes().subscribe((heroes: Hero[]) => {
+       if(heroes.length > 0) {
+         this.heroes = heroes;
+         this.isLoading = false;
+       }
+       else {
+         this.isLoading = false;
+         this.isError = true;
+       }
+     });
   }
 
   onSearchName($event: string)   {

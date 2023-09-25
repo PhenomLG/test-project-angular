@@ -11,11 +11,21 @@ import {RouterOutlet} from "@angular/router";
 })
 export class AppComponent {
   title = 'Tour of Heroes';
+  isError: boolean = false;
+  isLoading: boolean = false;
 
   constructor() {
   }
   public getRouterOutletState(outlet: RouterOutlet) {
     return outlet.isActivated ? outlet.activatedRoute : '';
+  }
+
+  onLoading($event: boolean): void {
+    this.isLoading = $event;
+  }
+
+  onError($event: boolean): void {
+    this.isError = $event;
   }
 }
 
